@@ -8,6 +8,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import {
+  IdentityModal,
+  useIdentityContext,
+  IdentityContextProvider,
+} from "react-netlify-identity-widget"
+import "react-netlify-identity-widget/styles.css"
+import "@reach/tabs/styles.css"
 
 import Header from "./header"
 import "./layout.css"
@@ -34,9 +41,11 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
+        <footer
+          style={{
+            marginTop: `2rem`,
+          }}
+        >
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
